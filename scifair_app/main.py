@@ -5,6 +5,8 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 import pandas as pd
+import flask
+import os
 from sklearn import linear_model
 
 '''df = pd.read_csv('scifair.csv')
@@ -41,6 +43,11 @@ Y = df['best_renewable_resource'].astype(float)
 
 regr = linear_model.LinearRegression()
 regr.fit(X, Y)
+
+app = flask.Flask(__name__)
+
+@app.route('/')
+
 
 
 class MyGridLayout(GridLayout):
